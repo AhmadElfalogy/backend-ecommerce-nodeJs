@@ -8,8 +8,8 @@ mongoose.connect(
   },
   err => {
     if (err) {
-      console.error("aaaaaaa");
+      console.error("Failed to connect");
       process.exit(1);
-    } else console.log("DOne");
+    } else console.log("Connected");
   }
 );
