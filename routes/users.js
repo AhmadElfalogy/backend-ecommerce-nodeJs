@@ -6,9 +6,12 @@ const authenticationMiddleware = require("../middlewares/authentication");
 
 router.post("/", async (req, res, next) => {
   try {
-    const user = new User(req.body);
+    console.log(req.body);
+    const {username , password , email} = req.body;
+    const user = new User({username,password,email});
     await user.save();
     res.send(user);
+    console.log(user);
   } catch (err) {
     next(createError(400, err));
   }

@@ -1,7 +1,6 @@
 var express = require("express");
 var path = require("path");
 require("./db");
-var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
 
@@ -10,7 +9,7 @@ const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
 
 var app = express();
-
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

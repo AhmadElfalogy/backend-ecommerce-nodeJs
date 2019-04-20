@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
-  productId: {
+  userId: {
     type: String
   },
   productName: {
@@ -30,4 +30,5 @@ const schema = new mongoose.Schema({
 });
 
 const Product = mongoose.model("Product", schema);
+
 module.exports = Product;
